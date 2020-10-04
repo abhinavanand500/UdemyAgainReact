@@ -1,0 +1,8 @@
+.aa {
+    display: flex;
+}
+
+.bb {
+    width: 40%;
+    max-height: 500px;
+}
