@@ -1,6 +1,6 @@
 import React from "react";
 import Accordian from "./component/Accordian";
-
+import Search from "./component/Search";
 const items = [
     {
         title: "How React works? How Virtual-DOM works in React?",
@@ -23,7 +23,8 @@ const items = [
 function App() {
     return (
         <div>
-            <Accordian items={items} />
+            {/* <Accordian items={items} /> */}
+            <Search />
         </div>
     );
 }
