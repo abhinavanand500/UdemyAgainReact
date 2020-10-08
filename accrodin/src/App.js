@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Accordian from "./component/Accordian";
+import Dropdown from "./component/Dropdown";
 import Search from "./component/Search";
+
+const options = [
+    {
+        label: "The color Red",
+        value: "red",
+    },
+    {
+        label: "The color Blue",
+        value: "blue",
+    },
+    {
+        label: "The color Green",
+        value: "green",
+    },
+];
+
 const items = [
     {
         title: "How React works? How Virtual-DOM works in React?",
@@ -21,10 +38,16 @@ const items = [
 ];
 
 function App() {
+    const [selected, setSelected] = useState(options[0]);
     return (
         <div>
             {/* <Accordian items={items} /> */}
-            <Search />
+            {/* <Search /> */}
+            <Dropdown
+                options={options}
+                onSelectedChange={setSelected}
+                selected={selected}
+            />
         </div>
     );
 }

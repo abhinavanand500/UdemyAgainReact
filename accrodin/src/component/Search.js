@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 function Search() {
-    const [term, setTerm] = useState("");
+    const [term, setTerm] = useState("car");
     const [results, setResult] = useState([]);
     console.log(results);
     useEffect(() => {
@@ -20,8 +20,17 @@ function Search() {
             );
             setResult(data.query.search);
         };
-        if (term) {
+        if (term && !results.length) {
             search();
+        } else {
+            const timeOutId = setTimeout(() => {
+                if (term) {
+                    search();
+                }
+            }, 500);
+            return () => {
+                clearTimeout(timeOutId);
+            };
         }
     }, [term]);
     const renderedResults = results.map((result, index) => {
@@ -44,7 +53,7 @@ function Search() {
     });
 
     return (
-        <div className='ui form'>
+        <div className='ui container ui form'>
             <div className='field'>
                 <label>Enter Search Term</label>
                 <input
