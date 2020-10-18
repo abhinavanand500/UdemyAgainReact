@@ -1,0 +1,7 @@
+.video_list {
+    display: flex;
+    align-items: center;
+}
+.img_list {
+    height: 20px;
+}
