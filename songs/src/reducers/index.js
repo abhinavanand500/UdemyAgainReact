@@ -1,3 +1,5 @@
+import { combineReducers } from "redux";
+
 const songReducer = () => {
     return [
         { title: "Pyar Kiya To Darna Kya", duration: "4.35" },
@@ -15,3 +17,8 @@ const selectedSongReducer = (selectedSong = null, action) => {
     }
     return selectedSong;
 };
+
+export default combineReducers({
+    songs: songReducer,
+    selectedSong: selectedSongReducer,
+});
