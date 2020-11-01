@@ -5,9 +5,6 @@ const UserHeader = (props) => {
     useEffect(() => {
         props.fetchUser(props.userId);
     }, []);
-
-    // const user = props.users.find((user) => user.id === props.userId);
-    console.log(props);
     const { user } = props;
     if (!user) {
         return <div>Loading</div>;
