@@ -35,6 +35,6 @@ const mapStateToProps = (state, ownProps) => {
     return { stream: state.streams[ownProps.match.params.id] };
 };
 
-export default connect(mapStateToProps, { fetchStream, editStream })(
+export default connect(mapStateToProps, { x:fetchStream, editStream })(
     StreamEdit,
 );
