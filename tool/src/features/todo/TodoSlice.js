@@ -13,5 +13,29 @@ export const slice = createSlice({
             });
             todoId++;
         },
+        edit: (state, action) => {
+            const { id, description } = action.payload;
+            const toDoEdit = state.find((todo) => todo.id === id);
+            if (toDoEdit) {
+                toDoEdit.description = description;
+            }
+        },
+        toggleComplete: (state, action) => {
+            const { payload } = action;
+            const todoToToggle = state.find((todo) => todo.id === payload);
+            if (todoToToggle) {
+                todoToToggle.isCompleted = !todoToToggle.isCompleted;
+            }
+        },
+        remove: (state, action) => {
+            const { payload } = action;
+            const index = state.findIndex((todo) => todo.id === payload);
+            if (index !== -1) {
+                state.splice(index, 1);
+            }
+        },
     },
 });
+
+export const { create, edit, toggleComplete, remove } = slice.actions;
+export default slice.reducer;
