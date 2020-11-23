@@ -1,2 +1,2 @@
 import React from "react";
-export default React.createContext("Hindi");
+export default React.createContext("English");
