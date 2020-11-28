@@ -38,4 +38,5 @@ export const slice = createSlice({
 });
 
 export const { create, edit, toggleComplete, remove } = slice.actions;
+// console.log({create})
 export default slice.reducer;
